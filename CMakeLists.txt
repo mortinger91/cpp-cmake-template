@@ -1,0 +1,45 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+
+# Name
+set(PROJECT_NAME "template-cmake-cpp")
+set(PROJECT_DESCRIPTION "Template Cmake Cpp")
+set(AUTHOR "mortinger91")
+set(ONLINE_REPOSITORY "https://github.com/${AUTHOR}/${PROJECT_NAME}")
+
+# Version
+set(VERSION_MAJOR "1")
+set(VERSION_MINOR "0")
+set(VERSION_PATCH "0")
+set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+
+# Project
+project(${PROJECT_NAME}
+		VERSION ${VERSION}
+		DESCRIPTION ${PROJECT_DESCRIPTION}
+		HOMEPAGE_URL ${ONLINE_REPOSITORY})
+
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# C
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+
+# C++
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+include_directories (${CMAKE_SOURCE_DIR})
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/int")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/lib")
+
+set(LIB_TARGET "Library")
+set(SUBMODULES_TARGET "Submodules")
+
+add_subdirectory(src/binary)
+add_subdirectory(src/lib)
+add_subdirectory(src/submodules)
