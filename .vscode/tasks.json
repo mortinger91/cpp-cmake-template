@@ -2,9 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build_cmake",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/ProjectFolder; ./scripts/cmake_build.sh", 
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "build_debug",
             "type": "shell",
-            "command": "./scripts/make_debug.sh", 
+            "command": "${workspaceFolder}/ProjectFolder/scripts/make_debug.sh", 
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -14,7 +24,7 @@
         {
             "label": "build_release",
             "type": "shell",
-            "command": "./scripts/make_release.sh", 
+            "command": "${workspaceFolder}/ProjectFolder/scripts/make_release.sh", 
             "problemMatcher": [],
             "group": {
                 "kind": "build",
