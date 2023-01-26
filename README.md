@@ -1,9 +1,10 @@
 <h1>template-cmake-cpp</h1>
 Template for a CMAKE C++ project.
 <h2>Build:</h2>
-Execute script ```./ProjectFolder/scripts/cmake_build.sh```<br>
-or<br>
-Execute task ```build_cmake``` in VSCode.
+Execute script:
+
+```./ProjectFolder/scripts/cmake_build.sh```<br>
+or execute task "build_cmake" in VSCode.
 <h2>Debug:</h2>
 Select a configuration in VSCode:<br>
 - Debug<br>
