@@ -1,0 +1,53 @@
+name: cpp-server
+on:
+  push:
+concurrency:
+  group: "${{ github.ref }}"
+  cancel-in-progress: true
+jobs:
+  windows:
+    name: windows
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ilammy/msvc-dev-cmd@v1
+    - uses: lukka/get-cmake@latest
+    - name: configure and build
+      uses: lukka/run-cmake@v10
+      env:
+        ENV_DIR: '${{ github.workspace }}'
+      with:
+        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
+        buildWithCMakeArgs: '-- -v'
+        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+  macos:
+    name: macos
+    runs-on: macos-11
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v3
+    - uses: lukka/get-cmake@latest
+    - name: configure and build
+      uses: lukka/run-cmake@v10
+      env:
+        ENV_DIR: '${{ github.workspace }}'
+      with:
+        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
+        buildWithCMakeArgs: '-- -v'
+        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+  linux:
+    name: linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v3
+    - uses: lukka/get-cmake@latest
+    - name: configure and build
+      uses: lukka/run-cmake@v10
+      env:
+        ENV_DIR: '${{ github.workspace }}'
+      with:
+        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
+        buildWithCMakeArgs: '-- -v'
+        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'  
