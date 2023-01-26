@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  dev-container:
+    volumes:
+      - template-volume:/template-folder
+    
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dev-container
+    tty: true
+
+    environment:
+      - TEST_VAR_COMPOSE=asd
+
+    ports:
+      - 8080:5555
