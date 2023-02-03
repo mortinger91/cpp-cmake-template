@@ -1,7 +1,6 @@
 add_library(
 	${LIB_TARGET}
 	utility.cpp
-	utility.h
 )
 
 target_compile_definitions(
