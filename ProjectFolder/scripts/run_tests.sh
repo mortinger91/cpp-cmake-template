@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Running tests..."
-ProjectFolder/scripts/cmake_build.sh && \
 ProjectFolder/scripts/make_debug.sh && \
-make test -C ProjectFolder/build/debug
+ctest --test-dir ProjectFolder/build
 echo "Finished running tests..."
