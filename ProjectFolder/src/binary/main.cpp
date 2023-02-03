@@ -6,6 +6,6 @@
 
 int main()
 {
-	std::coutt << Utility::HelloWorld() << std::endl;
+	std::cout << Utility::HelloWorld() << std::endl;
 	return 0;
 }
