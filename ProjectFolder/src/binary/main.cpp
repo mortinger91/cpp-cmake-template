@@ -1,9 +1,11 @@
 // main.cpp: This file contains the 'main' function. Program execution begins and ends there.
 
+#include <iostream>
+
 #include "src/lib/utility.h"
 
 int main()
 {
-	Utility::HelloWorld();
+	std::cout << Utility::HelloWorld() << std::endl;
 	return 0;
 }

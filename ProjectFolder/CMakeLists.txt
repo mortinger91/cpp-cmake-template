@@ -43,3 +43,6 @@ set(SUBMODULES_TARGET "Submodules")
 add_subdirectory(src/binary)
 add_subdirectory(src/lib)
 add_subdirectory(src/submodules)
+
+enable_testing()
+add_subdirectory(tests)

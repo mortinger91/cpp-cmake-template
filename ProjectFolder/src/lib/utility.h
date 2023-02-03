@@ -1,6 +1,8 @@
 #pragma once
 
+#include <string>
+
 namespace Utility
 {
-	void HelloWorld();
+	std::string HelloWorld();
 }

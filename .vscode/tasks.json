@@ -4,7 +4,17 @@
         {
             "label": "build_cmake",
             "type": "shell",
-            "command": "cd ${workspaceFolder}/ProjectFolder; ./scripts/cmake_build.sh", 
+            "command": "${workspaceFolder}/ProjectFolder/scripts/cmake_build.sh", 
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run_tests",
+            "type": "shell",
+            "command": "${workspaceFolder}/ProjectFolder/scripts/run_tests.sh", 
             "problemMatcher": [],
             "group": {
                 "kind": "build",

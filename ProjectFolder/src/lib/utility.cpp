@@ -1,11 +1,9 @@
 #include "utility.h"
 
-#include <iostream>
-
 namespace Utility
 {
-	void HelloWorld()
+	std::string HelloWorld()
 	{
-		std::cout << "Hello World!" << std::endl;
+		return "Hello World!";
 	}
 }
