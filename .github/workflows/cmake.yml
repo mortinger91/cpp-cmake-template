@@ -56,4 +56,4 @@ jobs:
         buildWithCMakeArgs: '-- -v -DCMAKE_BUILD_TYPE=Debug'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: cd ${{ github.workspace }}/ProjectFolder/build; make test
+      run: cd ./ProjectFolder/build; make test
