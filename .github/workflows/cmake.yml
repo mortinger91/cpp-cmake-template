@@ -56,4 +56,4 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: ls /home/runner/work/template-cmake-cpp/template-cmake-cpp/ProjectFolder/build
+      run: ls /home/runner/work/template-cmake-cpp/template-cmake-cpp/ProjectFolder/build/tests
