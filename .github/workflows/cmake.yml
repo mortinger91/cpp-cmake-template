@@ -53,7 +53,7 @@ jobs:
         ENV_DIR: '${{ github.workspace }}'
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
-        buildWithCMakeArgs: '-- -v'
+        buildWithCMakeArgs: '-- -v -DCMAKE_BUILD_TYPE=Debug'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: ${{ github.workspace }}/ProjectFolder/scripts/run_tests.sh
+      run: cd ${{ github.workspace }}/ProjectFolder/build; make test
