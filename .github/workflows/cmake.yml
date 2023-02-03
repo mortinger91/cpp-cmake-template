@@ -21,6 +21,8 @@ jobs:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+    - name: run tests
+      run: ${{ github.workspace }}/ProjectFolder/scripts/run_tests.sh
   macos:
     name: macos
     runs-on: macos-11
@@ -36,6 +38,8 @@ jobs:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+    - name: run tests
+      run: ${{ github.workspace }}/ProjectFolder/scripts/run_tests.sh
   linux:
     name: linux
     runs-on: ubuntu-latest
@@ -50,4 +54,6 @@ jobs:
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
-        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'  
+        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+    - name: run tests
+      run: ${{ github.workspace }}/ProjectFolder/scripts/run_tests.sh

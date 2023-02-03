@@ -14,6 +14,11 @@ Execute script:
 or select and run a configuration in VSCode:<br>
 - Debug<br>
 - Release
-<h2>Adding a new file:</h2>
+<h2>Run tests:</h2>
+Execute script:
+
+```./ProjectFolder/scripts/run_tests.sh```<br>
+or execute task "run_tests" in VSCode.
+<h2>Add a new file:</h2>
 - Create the new file in desired folder<br>
 - Add the .cpp reference in the folder's CMakeLists.txt file
