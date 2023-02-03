@@ -22,7 +22,7 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: make test -C ${{ github.workspace }}/ProjectFolder/build/
+      run: make test -C D:\a\template-cmake-cpp\ProjectFolder\build
   macos:
     name: macos
     runs-on: macos-11
@@ -39,7 +39,7 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: make test -C ${{ github.workspace }}/ProjectFolder/build/
+      run: make test -C /Users/runner/work/template-cmake-cpp/ProjectFolder/build
   linux:
     name: linux
     runs-on: ubuntu-latest
@@ -56,4 +56,4 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: make test -C ProjectFolder/build/
+      run: make test -C /home/runner/work/template-cmake-cpp/ProjectFolder/build
