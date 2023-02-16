@@ -4,7 +4,7 @@
 
 void testHelloWorld()
 {
-    ASSERT(Utility::HelloWorld() == "Hello World!")
+    assert(Utility::HelloWorld() == "Hello World!");
 }
 
 int main()
