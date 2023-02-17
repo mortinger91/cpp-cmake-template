@@ -22,7 +22,8 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: ctest --test-dir ${{ github.workspace }}/ProjectFolder/build
+      working-directory: ${{ github.workspace }}
+      run: ctest --output-on-failure --test-dir ./ProjectFolder/build
   macos:
     name: macos
     runs-on: macos-11
@@ -39,7 +40,8 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: ctest --test-dir ${{ github.workspace }}/ProjectFolder/build
+      working-directory: ${{ github.workspace }}
+      run: ctest --output-on-failure --test-dir ./ProjectFolder/build
   linux:
     name: linux
     runs-on: ubuntu-latest
@@ -56,4 +58,5 @@ jobs:
         buildWithCMakeArgs: '-- -v'
         buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
     - name: run tests
-      run: ctest --test-dir ${{ github.workspace }}/ProjectFolder/build
+      working-directory: ${{ github.workspace }}
+      run: ctest --output-on-failure --test-dir ./ProjectFolder/build

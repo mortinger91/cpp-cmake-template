@@ -2,5 +2,7 @@
 
 echo "Running tests..."
 ProjectFolder/scripts/make_debug.sh && \
-ctest --test-dir ProjectFolder/build/debug
+ctest --output-on-failure --test-dir ProjectFolder/build/debug
+RESULT=$(echo $?)
 echo "Finished running tests..."
+exit $RESULT
