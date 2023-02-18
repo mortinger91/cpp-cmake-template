@@ -1,7 +1,12 @@
 [![cpp-cmake-template](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml)
 
 <h1>cpp-cmake-template</h1>
-Template for a CMAKE C++ project.
+Template for a multi platform CMAKE C++ project that includes:
+
+- VSCode files
+- Github Actions
+- Test suite using CTest
+- Dockerfile 
 <h2>Set up project:</h2>
 Execute script:
 
@@ -22,6 +27,6 @@ Execute script:
 ```./ProjectFolder/scripts/run_tests.sh```<br>
 or execute task "run_tests" in VSCode.
 <h2>Add a new file:</h2>
-- Create the new file in desired folder<br>
-- Add the .cpp reference in the folder's CMakeLists.txt file.<br>
-- If adding a new test, also add add_test() in the tests/ CMakeLists.txt file
+- Create the new file in the desired folder.<br>
+- Add file.cpp in the CMakeLists.txt file (the one in the same folder as the file).<br>
+- If adding a new test file, also add add_test() in the tests/CMakeLists.txt file.
