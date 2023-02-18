@@ -50,4 +50,4 @@ RUN scripts/make_debug.sh
 
 # The command that is run by default by the container when "docker run ..."/"docker start ..." is used
 # CMD ["/bin/bash"]
-CMD ["./build/debug/bin/template-cmake-cpp"]
+CMD ["./build/debug/bin/cpp-cmake-template"]

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
 # Name
-set(PROJECT_NAME "template-cmake-cpp")
+set(PROJECT_NAME "cpp-cmake-template")
 set(PROJECT_DESCRIPTION "Template Cmake Cpp")
 set(AUTHOR "mortinger91")
 set(ONLINE_REPOSITORY "https://github.com/${AUTHOR}/${PROJECT_NAME}")

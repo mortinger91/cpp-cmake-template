@@ -1,6 +1,6 @@
-[![template-cmake-cpp](https://github.com/mortinger91/template-cmake-cpp/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/template-cmake-cpp/actions/workflows/cmake.yml)
+[![cpp-cmake-template](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml)
 
-<h1>template-cmake-cpp</h1>
+<h1>cpp-cmake-template</h1>
 Template for a CMAKE C++ project.
 <h2>Set up project:</h2>
 Execute script:
@@ -12,7 +12,7 @@ Execute script:
 
 ```./ProjectFolder/scripts/make_debug.sh```<br>
 then run:<br>
-```./ProjectFolder/build/debug/bin/template-cmake-cpp```<br>
+```./ProjectFolder/build/debug/bin/cpp-cmake-template```<br>
 or select and run a configuration in VSCode:<br>
 - Debug<br>
 - Release

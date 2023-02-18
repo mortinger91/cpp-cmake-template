@@ -1,4 +1,4 @@
-name: template-cmake-cpp
+name: cpp-cmake-template
 on:
   push:
 concurrency:
