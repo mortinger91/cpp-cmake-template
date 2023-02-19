@@ -1,7 +1,7 @@
 [![cpp-cmake-template](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml)
 
 <h1>cpp-cmake-template</h1>
-Template for a multi platform CMAKE C++ project that includes:
+Template for a multi platform CMake C++ project that includes:
 
 - VSCode files
 - Github Actions
