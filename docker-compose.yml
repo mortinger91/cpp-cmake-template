@@ -2,8 +2,6 @@ version: "3.7"
 
 services:
   dev-container:
-    volumes:
-      - template-volume:/template-folder
     
     build:
       context: .
@@ -12,7 +10,7 @@ services:
     tty: true
 
     environment:
-      - TEST_VAR_COMPOSE=asd
+      - TEST_VAR_COMPOSE=test
 
     ports:
       - 8080:5555
