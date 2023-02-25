@@ -1,22 +1,13 @@
-cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
-
-# Name
-set(PROJECT_NAME "cpp-cmake-template")
-set(PROJECT_DESCRIPTION "Template Cmake Cpp")
-set(AUTHOR "mortinger91")
-set(ONLINE_REPOSITORY "https://github.com/${AUTHOR}/${PROJECT_NAME}")
-
-# Version
-set(VERSION_MAJOR "1")
-set(VERSION_MINOR "0")
-set(VERSION_PATCH "0")
-set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
 # Project
-project(${PROJECT_NAME}
-		VERSION ${VERSION}
+set(PROJECT_DESCRIPTION "Template CMake C++")
+set(ONLINE_REPOSITORY "https://github.com/mortinger91/cpp-cmake-template")
+project("cpp-cmake-template"
 		DESCRIPTION ${PROJECT_DESCRIPTION}
 		HOMEPAGE_URL ${ONLINE_REPOSITORY})
+
+include(cmake/StandardSettings.cmake)
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set (CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -43,6 +34,4 @@ set(SUBMODULES_TARGET "Submodules")
 add_subdirectory(src/binary)
 add_subdirectory(src/lib)
 add_subdirectory(src/submodules)
-
-enable_testing()
 add_subdirectory(tests)

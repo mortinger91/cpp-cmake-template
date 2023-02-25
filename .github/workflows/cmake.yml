@@ -20,10 +20,10 @@ jobs:
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
-        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+        buildDirectory: '${{ github.workspace }}/build/'
     - name: run tests
       working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./ProjectFolder/build
+      run: ctest --output-on-failure --test-dir ./build/tests
   macos:
     name: macos
     runs-on: macos-11
@@ -38,10 +38,10 @@ jobs:
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
-        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+        buildDirectory: '${{ github.workspace }}/build/'
     - name: run tests
       working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./ProjectFolder/build
+      run: ctest --output-on-failure --test-dir ./build/tests
   linux:
     name: linux
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
         buildWithCMakeArgs: '-- -v'
-        buildDirectory: '${{ github.workspace }}/ProjectFolder/build/'
+        buildDirectory: '${{ github.workspace }}/build/'
     - name: run tests
       working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./ProjectFolder/build
+      run: ctest --output-on-failure --test-dir ./build/tests
