@@ -6,12 +6,14 @@ Template for a multi platform CMake C++ project that includes:
 - VSCode files
 - Github Actions
 - Test suite using CTest
-- Dockerfile 
+- Dockerfile
+
 <h2>Set up project:</h2>
 Execute script:
 
-```./ProjectFolder/scripts/cmake_build.sh```<br>
+```./ProjectFolder/scripts/build_cmake.sh```<br>
 or execute task "build_cmake" in VSCode.
+
 <h2>Build and Run:</h2>
 Execute script:
 
@@ -19,8 +21,10 @@ Execute script:
 then run:<br>
 ```./ProjectFolder/build/debug/bin/cpp-cmake-template```<br>
 or select and run a configuration in VSCode:<br>
-- Debug<br>
+
+- Debug
 - Release
+
 <h2>Run tests:</h2>
 Execute script:
 
@@ -30,7 +34,10 @@ or execute task "run_tests" in VSCode.
 To run tests in a Docker container:<br>
 ```docker compose down --volumes --rmi all```<br>
 ```docker compose up```
-<h2>Add a new file:</h2>
-- Create the new file in the desired folder.<br>
-- Add file.cpp in the CMakeLists.txt file (the one in the same folder as the file).<br>
-- If adding a new test file, also add add_test() in the tests/CMakeLists.txt file.
+
+<h2>Notes:</h2>
+
+- When creating a new folder in ProjectFolder/src<br>
+also add its name in ProjectFolder/src/CMakeLists.txt
+- To add a new test just add a new test_***.cpp file<br>
+in ProjectFolder/test.
