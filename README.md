@@ -37,7 +37,9 @@ To run tests in a Docker container:<br>
 
 <h2>Notes:</h2>
 
-- When creating a new folder in ProjectFolder/src<br>
-also add its name in ProjectFolder/src/CMakeLists.txt
+- To add new files create a new folder in ProjectFolder/src,<br>
+no CMake files need to be modified.<br>
+You need to re-run "build_cmake".
 - To add a new test just add a new test_***.cpp file<br>
-in ProjectFolder/test.
+in ProjectFolder/test.<br>
+You need to re-run "build_cmake".

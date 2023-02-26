@@ -1,6 +1,27 @@
-# Add any new directory that you add in ProjectFolder/src here 
-file(GLOB_RECURSE sources utility/*.cpp)
-add_library(${PROJECT_NAME}_LIB ${sources})
+set(sources_list
+	# Add here any file you want to add manually which is not in a
+	# src/directory.
+)
+
+# Getting all the .cpp files in any src/directory.
+file(GLOB directories */)
+foreach(dir ${directories})
+    if(IS_DIRECTORY ${dir})
+		string(FIND ${dir} "/" last_slash_pos REVERSE)
+		math(EXPR string_start "${last_slash_pos}+1")
+		string(SUBSTRING ${dir} ${string_start} -1 dir_stripped)
+		file(GLOB_RECURSE sources ${dir_stripped}/*.cpp)
+		list(APPEND sources_list ${sources})
+    endif()
+endforeach()
+
+add_library(${PROJECT_NAME}_LIB ${sources_list})
+
+target_include_directories(
+	${PROJECT_NAME}_LIB
+	PUBLIC
+		${CMAKE_SOURCE_DIR}/src
+)
 
 target_compile_definitions(
 	${PROJECT_NAME}_LIB
@@ -33,7 +54,7 @@ target_link_libraries(
 		# Add libraries to link to the binary here
 )
 
-set_target_properties(
-	${PROJECT_NAME}_LIB
-		PROPERTIES ENABLE_EXPORTS ON
-)
+# set_target_properties(
+# 	${PROJECT_NAME}_LIB
+# 		# Add any target properties here
+# )
