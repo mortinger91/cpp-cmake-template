@@ -13,4 +13,11 @@ foreach(test_cpp_file ${test_cpp_files})
 	add_executable(${test_name} ${test_cpp_file})
 	target_link_libraries(${test_name} ${PROJECT_NAME}_LIB)
 	add_test(${test_name} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${test_name})
+
+	target_compile_features(
+		${test_name}
+		PRIVATE
+			c_std_11
+			cxx_std_17
+	)
 endforeach()
