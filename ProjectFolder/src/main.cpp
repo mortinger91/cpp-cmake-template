@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "src/lib/utility.h"
+#include "utility/utility.h"
 
 int main()
 {
