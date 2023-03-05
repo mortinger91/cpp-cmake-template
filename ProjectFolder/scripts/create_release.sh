@@ -7,9 +7,9 @@ cmake -SProjectFolder -Bbuild/release -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=O
 echo "Finished building Release CMAKE files!"
 
 
-if [ $(uname -s) == "Linux" ]; then
+if [ "$(uname -s)" == "Linux" ]; then
 	cpu_count=$(grep -c processor /proc/cpuinfo)
-elif [ $(uname -s) == "Darwin" ]; then
+elif [ "$(uname -s)" == "Darwin" ]; then
 	cpu_count=$(sysctl -a | grep "machdep.cpu.core_count: " | sed 's/^machdep.cpu.core_count: //')
 else
 	exit 1
