@@ -1,5 +1,12 @@
 #!/bin/bash
 
+echo "Started building Release CMAKE files..."
+# Clearing build folder if it exists
+rm -r build/release &> /dev/null
+cmake -SProjectFolder -Bbuild/release -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF
+echo "Finished building Release CMAKE files!"
+
+
 if [ $(uname -s) == "Linux" ]; then
 	cpu_count=$(grep -c processor /proc/cpuinfo)
 elif [ $(uname -s) == "Darwin" ]; then

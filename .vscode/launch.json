@@ -21,27 +21,6 @@
 			],
 			"preLaunchTask": "build_debug",
 			"miDebuggerPath": "/usr/bin/gdb"
-		},
-		{
-			"name": "RELEASE",
-			"type": "cppdbg",
-			"request": "launch",
-			"program": "${workspaceFolder}/build/release/bin/cpp-cmake-template",
-			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}",
-			"environment": [],
-			"externalConsole": false,
-			"MIMode": "gdb",
-			"setupCommands": [
-				{
-					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
-				}
-			],
-			"preLaunchTask": "build_release",
-			"miDebuggerPath": "/usr/bin/gdb"
 		}
 	]
 }

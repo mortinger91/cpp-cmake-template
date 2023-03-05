@@ -11,35 +11,57 @@ Template for a multi platform CMake C++ project that includes:
 <h2>Set up project:</h2>
 Execute script:
 
-```./ProjectFolder/scripts/build_cmake.sh```<br>
-or execute task "build_cmake" in VSCode.
+```
+./ProjectFolder/scripts/build_cmake_debug.sh
+```
 
-<h2>Build and Run:</h2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```build_cmake_debug```.
+
+<h2>Build and Run in Debug:</h2>
 Execute script:
 
-```./ProjectFolder/scripts/make_debug.sh```<br>
-then run:<br>
-```./ProjectFolder/build/debug/bin/cpp-cmake-template```<br>
-or select and run a configuration in VSCode:<br>
+```
+./ProjectFolder/scripts/build_debug.sh
+```
 
-- Debug
-- Release
+Then run:
+
+```
+lldb ./build/debug/bin/cpp-cmake-template
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or launch VSCode ```DEBUG``` configuration.
 
 <h2>Run tests:</h2>
 Execute script:
 
-```./ProjectFolder/scripts/run_tests.sh```<br>
-or execute task "run_tests" in VSCode.
+```
+./ProjectFolder/scripts/run_tests.sh
+```
 
-To run tests in a Docker container:<br>
-```docker compose down --volumes --rmi all```<br>
-```docker compose up```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```run_tests```.
+
+To run tests in a Docker container:
+
+```
+docker compose down --volumes --rmi all
+docker compose up
+```
+
+<h2>Build release:</h2>
+Execute script:
+
+```
+./ProjectFolder/scripts/create_release.sh
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```create_release```.
 
 <h2>Notes:</h2>
 
-- To add new files create a new folder in ProjectFolder/src,<br>
-no CMake files need to be modified.<br>
-You need to re-run "build_cmake".
-- To add a new test just add a new test_***.cpp file<br>
-in ProjectFolder/test.<br>
-You need to re-run "build_cmake".
+- To add new files create a new folder in ```ProjectFolder/src```<br>
+and add ```*.cpp``` and ```*.h``` files into it.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;You need to re-run ```build_cmake```.
+- To add a new test, add a new ```test_***.cpp``` file in<br>
+```ProjectFolder/test```.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;You need to re-run ```build_cmake```.
