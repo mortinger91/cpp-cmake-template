@@ -1,63 +1,57 @@
 [![cpp-cmake-template](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml)
 
-<h1>cpp-cmake-template</h1>
-Template for a multi platform CMake C++ project that includes:
+# cpp-cmake-template
+
+### Template for a multi platform CMake C++ project that includes:
 
 - VSCode files
 - Github Actions
 - Test suite using CTest
 - Dockerfile
 
-<h2>Set up project:</h2>
+Set up project:
+--------------
 Execute script:
 
-```
-./ProjectFolder/scripts/build_cmake_debug.sh
-```
+    ./ProjectFolder/scripts/build_cmake_debug.sh
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```build_cmake_debug```.
+or execute VSCode task `build_cmake_debug`.
 
-<h2>Build and Run in Debug:</h2>
+Build and Debug:
+----------------
 Execute script:
 
-```
-./ProjectFolder/scripts/build_debug.sh
-```
+    ./ProjectFolder/scripts/build_debug.sh
 
 Then run:
 
-```
-lldb ./build/debug/bin/cpp-cmake-template
-```
+    lldb ./build/debug/bin/cpp-cmake-template
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or launch VSCode ```DEBUG``` configuration.
+or launch VSCode `DEBUG` configuration.
 
-<h2>Run tests:</h2>
+Run tests:
+----------
 Execute script:
 
-```
-./ProjectFolder/scripts/run_tests.sh
-```
+    ./ProjectFolder/scripts/run_tests.sh
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```run_tests```.
+or execute VSCode task `run_tests`.
 
-To run tests in a Docker container:
+### To run tests in a Docker container:
 
-```
-docker compose down --volumes --rmi all
-docker compose up
-```
+    docker compose down --volumes --rmi all
+    docker compose up
 
-<h2>Build release:</h2>
+Build release:
+--------------
 Execute script:
 
-```
-./ProjectFolder/scripts/create_release.sh
-```
+    ./ProjectFolder/scripts/create_release.sh
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or execute VSCode task ```create_release```.
+or execute VSCode task ```create_release```.
 
-<h2>Notes:</h2>
+Notes:
+=======
 
 - To add new files create a new folder in ```ProjectFolder/src```<br>
 and add ```*.cpp``` and ```*.h``` files into it.<br>
@@ -66,7 +60,7 @@ and add ```*.cpp``` and ```*.h``` files into it.<br>
 ```ProjectFolder/test```.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;You need to re-run ```build_cmake```.
 
-<h2>Possible future improvements:</h2>
+### Possible future improvements:
 
 - Linter
 - Static checker (BASH and cpp)
