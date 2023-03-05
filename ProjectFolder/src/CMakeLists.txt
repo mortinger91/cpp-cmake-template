@@ -37,13 +37,20 @@ target_compile_features(
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+	set(CUSTOM_COMPILE_OPTIONS
+		-Wall
+	)
+	if (UNIX)
+		list(APPEND CUSTOM_COMPILE_OPTIONS
+			-Werror
+			-Wpedantic 
+			-Wextra 
+		)
+	endif()
 	target_compile_options(
 		${PROJECT_NAME}_LIB
 		PRIVATE
-			-Wall
-			-Wextra 
-			-Wpedantic 
-			-Werror
+			${CUSTOM_COMPILE_OPTIONS}
 	)
 endif()
 
