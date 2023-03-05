@@ -7,7 +7,7 @@ concurrency:
 jobs:
   windows:
     name: windows
-    runs-on: windows-latest
+    runs-on: windows-2019
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
@@ -44,7 +44,7 @@ jobs:
       run: ctest --output-on-failure --test-dir ./build/tests
   linux:
     name: linux
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
