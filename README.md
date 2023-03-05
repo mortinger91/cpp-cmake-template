@@ -55,10 +55,10 @@ Notes:
 
 - To add new files create a new folder in ```ProjectFolder/src```<br>
 and add ```*.cpp``` and ```*.h``` files into it.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;You need to re-run ```build_cmake```.
+You need to re-run ```build_cmake```.
 - To add new tests, add a new ```test_***.cpp``` file in<br>
 ```ProjectFolder/test```.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;You need to re-run ```build_cmake```.
+You need to re-run ```build_cmake```.
 
 ### Possible future improvements:
 
