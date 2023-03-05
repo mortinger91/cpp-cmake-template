@@ -36,11 +36,16 @@ target_compile_features(
 		cxx_std_17
 )
 
-target_compile_options(
-	${PROJECT_NAME}_LIB
-	PRIVATE
-		${DEFAULT_COMPILER_OPTIONS}
-)
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+	target_compile_options(
+		${PROJECT_NAME}_LIB
+		PRIVATE
+			-Wall
+			-Wextra 
+			-Wpedantic 
+			-Werror
+	)
+endif()
 
 target_link_options(
 	${PROJECT_NAME}_LIB

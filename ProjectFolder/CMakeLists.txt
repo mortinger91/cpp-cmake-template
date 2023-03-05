@@ -9,7 +9,14 @@ project(
 		HOMEPAGE_URL ${ONLINE_REPOSITORY}
 )
 
-include(cmake/StandardSettings.cmake)
+
+# Additional settings
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+# set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+	set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+endif()
+
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
@@ -25,4 +32,7 @@ target_link_libraries(
 		${PROJECT_NAME}_LIB
 )
 
-add_subdirectory(tests)
+option(BUILD_TESTS "Build tests" ON)
+if (BUILD_TESTS)
+	add_subdirectory(tests)
+endif()
