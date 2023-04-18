@@ -25,15 +25,22 @@ target_include_directories(
 
 target_compile_definitions(
 	${PROJECT_NAME}_LIB
-	PRIVATE
+	PUBLIC
 		# Add compile definitions here
 )
 
 target_compile_features(
 	${PROJECT_NAME}_LIB
-	PRIVATE
+	PUBLIC
 		c_std_11
 		cxx_std_17
+)
+
+set_target_properties(
+	${PROJECT_NAME}_LIB
+		PROPERTIES
+			CXX_STANDARD_REQUIRED ON
+			CXX_EXTENSIONS OFF
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -49,24 +56,19 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 	endif()
 	target_compile_options(
 		${PROJECT_NAME}_LIB
-		PRIVATE
+		PUBLIC
 			${CUSTOM_COMPILE_OPTIONS}
 	)
 endif()
 
 target_link_options(
 	${PROJECT_NAME}_LIB
-	PRIVATE
+	PUBLIC
 		${DEFAULT_LINKER_OPTIONS}
 )
 
 target_link_libraries(
 	${PROJECT_NAME}_LIB
-	PRIVATE
+	PUBLIC
 		# Add libraries to link to the binary here
 )
-
-# set_target_properties(
-# 	${PROJECT_NAME}_LIB
-# 		# Add any target properties here
-# )

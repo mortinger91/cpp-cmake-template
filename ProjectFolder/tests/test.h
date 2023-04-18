@@ -11,7 +11,7 @@ namespace test {
     std::string errorStringSize = "size of the vectors: size of the first one: " + std::to_string(x.size()) + " size of the second one: " + std::to_string(y.size());
     std::cout << errorStringSize << std::endl;
     assert(x.size() == y.size() && "assertVectorContentIsEqual failed: the vectors does not have the same size!");
-    for (int i =0; i<x.size(); i++) {
+    for (size_t i =0; i<x.size(); i++) {
       if (x[i] != y[i]) {
         std::string errorString = "vectors' elements at index: " + std::to_string(i) + " do not match! first: " + std::to_string(x[i]) + " second: " + std::to_string(y[i]);
         std::cout << errorString << std::endl;
