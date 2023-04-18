@@ -22,7 +22,7 @@ foreach(test_cpp_file ${test_cpp_files})
 	)
 
 	set_target_properties(
-		${PROJECT_NAME}_LIB
+		${test_name}
 			PROPERTIES
 				CXX_STANDARD_REQUIRED ON
 				CXX_EXTENSIONS OFF
