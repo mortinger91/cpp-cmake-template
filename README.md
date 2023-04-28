@@ -9,6 +9,14 @@
 - Test suite using CTest
 - Dockerfile
 
+Requirements:
+--------------
+- CMake
+- Clang
+- LLDB
+- VSCode 'CodeLLDB' extension (optional)
+- Visual Studio, MSVC compiler (Windows only)
+
 Set up project:
 --------------
 Execute script:
