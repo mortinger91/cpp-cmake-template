@@ -45,7 +45,7 @@ Execute script:
 
 or execute VSCode task `run_tests`.
 
-### To run tests in a Docker container:
+### Run tests in a Docker container:
 
     docker compose down --volumes --rmi all
     docker compose up
@@ -64,7 +64,7 @@ Notes:
 - To add new files create a new folder in ```ProjectFolder/src```<br>
 and add ```*.cpp``` and ```*.h``` files into it.<br>
 You need to re-run ```build_cmake```.
-- To add new tests, add a new ```test_***.cpp``` file in<br>
+- To add new tests, add a new ```test_*.cpp``` file in<br>
 ```ProjectFolder/test```.<br>
 You need to re-run ```build_cmake```.
 
