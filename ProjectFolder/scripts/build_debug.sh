@@ -3,7 +3,7 @@
 if [ "$(uname -s)" == "Linux" ]; then
 	cpu_count=$(grep -c processor /proc/cpuinfo)
 elif [ "$(uname -s)" == "Darwin" ]; then
-	cpu_count=$(sysctl -a | grep "machdep.cpu.core_count: " | sed 's/^machdep.cpu.core_count: //')
+	cpu_count=$(sysctl -n hw.cpu)
 else
 	exit 1
 fi
