@@ -12,51 +12,33 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: ilammy/msvc-dev-cmd@v1
-    - uses: lukka/get-cmake@latest
-    - name: configure and build
-      uses: lukka/run-cmake@v10
-      env:
-        ENV_DIR: '${{ github.workspace }}'
-      with:
-        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
-        configurePreset: 'Debug'
-        buildPreset: 'Debug'
+    - name: configure CMake
+      run: cmake -SProjectFolder --preset Debug
+    - name: build project
+      run: cmake --build build/Debug/
     - name: run tests
-      working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./build/Debug/tests
+      run: ./ProjectFolder/scripts/run_tests.sh
   macos:
     name: macos
     runs-on: macos-11
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
-    - uses: lukka/get-cmake@latest
-    - name: configure and build
-      uses: lukka/run-cmake@v10
-      env:
-        ENV_DIR: '${{ github.workspace }}'
-      with:
-        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
-        configurePreset: 'Debug'
-        buildPreset: 'Debug'
+    - name: configure CMake
+      run: ./ProjectFolder/scripts/build_cmake_debug.sh
+    - name: build project
+      run: ./ProjectFolder/scripts/build_debug.sh
     - name: run tests
-      working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./build/Debug/tests
+      run: ./ProjectFolder/scripts/run_tests.sh
   linux:
     name: linux
     runs-on: ubuntu-20.04
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
-    - uses: lukka/get-cmake@latest
-    - name: configure and build
-      uses: lukka/run-cmake@v10
-      env:
-        ENV_DIR: '${{ github.workspace }}'
-      with:
-        cmakeListsTxtPath: '${{ github.workspace }}/ProjectFolder/CMakeLists.txt'
-        configurePreset: 'Debug'
-        buildPreset: 'Debug'
+    - name: configure CMake
+      run: ./ProjectFolder/scripts/build_cmake_debug.sh
+    - name: build project
+      run: ./ProjectFolder/scripts/build_debug.sh
     - name: run tests
-      working-directory: ${{ github.workspace }}
-      run: ctest --output-on-failure --test-dir ./build/Debug/tests
+      run: ./ProjectFolder/scripts/run_tests.sh
