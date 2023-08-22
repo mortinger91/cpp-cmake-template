@@ -11,13 +11,12 @@ jobs:
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
-    - uses: ilammy/msvc-dev-cmd@v1
     - name: configure CMake
       run: cmake -SProjectFolder --preset Debug
     - name: build project
       run: cmake --build build/Debug/
     - name: run tests
-      run: ./ProjectFolder/scripts/run_tests.sh
+      run: ctest --output-on-failure --test-dir build/Debug/tests
   macos:
     name: macos
     runs-on: macos-11
