@@ -1,6 +1,4 @@
-[![linux](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/linux.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/linux.yml)
-[![macos](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/macos.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/macos.yml)
-[![windows](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/windows.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/windows.yml)
+[![main](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/main.yml)
 
 # cpp-cmake-template
 
