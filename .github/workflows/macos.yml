@@ -1,0 +1,19 @@
+name: cpp-cmake-template
+on:
+  push:
+concurrency:
+  group: "${{ github.ref }}"
+  cancel-in-progress: true
+jobs:
+  macos:
+    name: macos
+    runs-on: macos-11
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure CMake
+      run: ./ProjectFolder/scripts/build_cmake_debug.sh
+    - name: build project
+      run: ./ProjectFolder/scripts/build_debug.sh
+    - name: run tests
+      run: ./ProjectFolder/scripts/run_tests.sh
