@@ -1,4 +1,6 @@
-[![cpp-cmake-template](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/cmake.yml)
+[![linux](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/linux.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/linux.yml)
+[![macos](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/macos.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/macos.yml)
+[![windows](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/windows.yml/badge.svg?branch=master)](https://github.com/mortinger91/cpp-cmake-template/actions/workflows/windows.yml)
 
 # cpp-cmake-template
 
@@ -19,28 +21,22 @@ Requirements:
 
 Set up project:
 --------------
-Execute script:
-
     ./ProjectFolder/scripts/build_cmake_debug.sh
 
 or execute VSCode task `build_cmake_debug`.
 
 Build and Debug:
 ----------------
-Execute script:
-
     ./ProjectFolder/scripts/build_debug.sh
 
-Then run:
+Followed by:
 
-    lldb ./build/debug/bin/cpp-cmake-template
+    lldb ./build/Debug/bin/cpp-cmake-template
 
 or launch VSCode `DEBUG` configuration.
 
 Run tests:
 ----------
-Execute script:
-
     ./ProjectFolder/scripts/run_tests.sh
 
 or execute VSCode task `run_tests`.
@@ -52,8 +48,6 @@ or execute VSCode task `run_tests`.
 
 Build release:
 --------------
-Execute script:
-
     ./ProjectFolder/scripts/create_release.sh
 
 or execute VSCode task ```create_release```.
@@ -70,6 +64,5 @@ You need to re-run ```build_cmake_debug```.
 
 ### Possible future improvements:
 
-- Linter
 - Static checker (BASH and cpp)
 - CMake install
