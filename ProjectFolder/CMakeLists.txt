@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
 
+# Setting up ccache
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+endif()
+
 # Project
 set(PROJECT_DESCRIPTION "Template CMake C++")
 set(ONLINE_REPOSITORY "https://github.com/mortinger91/cpp-cmake-template")
