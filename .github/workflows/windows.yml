@@ -1,9 +1,11 @@
-name: cpp-cmake-template
+name: Build and test on Windows
 on:
-  push:
+  workflow_call:
+
 concurrency:
-  group: "${{ github.ref }}"
+  group: "${{ github.ref }}-windows"
   cancel-in-progress: true
+
 jobs:
   windows:
     name: windows

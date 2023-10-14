@@ -1,12 +1,13 @@
-name: cpp-cmake-template
+name: Build and test on macOS
 on:
-  push:
+  workflow_call:
+
 concurrency:
-  group: "${{ github.ref }}"
+  group: "${{ github.ref }}-macos"
   cancel-in-progress: true
+
 jobs:
   macos:
-    name: macos
     runs-on: macos-11
     timeout-minutes: 60
     steps:

@@ -1,13 +1,18 @@
-name: cpp-cmake-template
+name: Build and test on Linux
 on:
-  push:
+  workflow_call:
+
 concurrency:
-  group: "${{ github.ref }}"
+  group: "${{ github.ref }}-linux"
   cancel-in-progress: true
+
 jobs:
   linux:
-    name: linux
     runs-on: ubuntu-20.04
+    # Specify an image from hub.docker.com
+    # container:
+      # image: debian:10-slim
+      # options:
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
