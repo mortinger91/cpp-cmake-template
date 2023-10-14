@@ -8,14 +8,24 @@ concurrency:
 
 jobs:
   windows:
-    name: windows
     runs-on: windows-2019
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
-    - name: configure CMake
-      run: cmake -SProjectFolder --preset Debug
-    - name: build project
-      run: cmake --build build/Debug/
+    - name: Setup sccache
+      uses: hendrikmuhs/ccache-action@main
+      with:
+        key: ${{ github.job }}
+        max-size: 1000M
+        variant: sccache
+    - name: configure CMake and build
+      run: ./ProjectFolder/scripts/create_release.sh withTests
     - name: run tests
-      run: ctest --output-on-failure --test-dir build/Debug/tests
+      run: ./ProjectFolder/scripts/run_tests.sh Release
+    - uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: "linux-artifacts"
+        retention-days: 28
+        path: |-
+          build/Release/bin/cpp-cmake-template
