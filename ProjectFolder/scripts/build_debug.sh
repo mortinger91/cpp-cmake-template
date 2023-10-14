@@ -5,11 +5,11 @@
 # - whenever any file is added or removed from the project
 
 if [ "$(uname -s)" == "Linux" ]; then
-	cpu_count=$(nproc)
+    cpu_count=$(nproc)
 elif [ "$(uname -s)" == "Darwin" ]; then
-	cpu_count=$(sysctl -n hw.ncpu)
+    cpu_count=$(sysctl -n hw.ncpu)
 else
-	exit 1
+    exit 1
 fi
 
 cpu_count=$((cpu_count - 1))

@@ -1,14 +1,14 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "DEBUG",
-			"type": "lldb",
-			"request": "launch",
-			"program": "${workspaceFolder}/build/debug/bin/cpp-cmake-template",
-			"args": [],
-			"cwd": "${workspaceFolder}",
-			"preLaunchTask": "build_debug",
-		}
-	]
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DEBUG",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/cpp-cmake-template",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build_debug",
+        }
+    ]
 }

@@ -1,5 +1,4 @@
 #include "test.h"
-
 #include "utility/utility.h"
 
 void testHelloWorld()

@@ -4,5 +4,5 @@
 
 namespace Utility
 {
-	std::string HelloWorld();
+    std::string HelloWorld();
 }

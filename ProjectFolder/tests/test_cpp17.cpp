@@ -1,5 +1,4 @@
 #include "test.h"
-
 #include <memory>
 
 void testCpp17()

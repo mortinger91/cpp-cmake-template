@@ -8,15 +8,15 @@ FROM debian:latest
 # Adding all required packages to the image
 RUN apt-get update \
     && apt-get install -y \
-		apt-utils \
+        apt-utils \
         git \
-		build-essential \
+        build-essential \
         libtool autoconf pkg-config \
         clang \
         llvm \
         libc++-dev libc++abi-dev \
         cmake \        
-		libboost-all-dev \
+        libboost-all-dev \
         ccache \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
