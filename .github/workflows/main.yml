@@ -7,14 +7,14 @@ jobs:
   linux:
     permissions:
       contents: read
-    uses: ./github/workflows/linux.yml
+    uses: ./.github/workflows/linux.yml
 
   macos:
     permissions:
       contents: read
-    uses: ./github/workflows/macos.yml
+    uses: ./.github/workflows/macos.yml
 
   windows:
     permissions:
       contents: read
-    uses: ./github/workflows/windows.yml
+    uses: ./.github/workflows/windows.yml
