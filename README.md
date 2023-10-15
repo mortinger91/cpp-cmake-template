@@ -62,5 +62,6 @@ You need to re-run ```build_cmake_debug```.
 
 ### Possible future improvements:
 
+- Add scripts for Windows, fix CI
 - Static checker (BASH and cpp)
 - CMake install
