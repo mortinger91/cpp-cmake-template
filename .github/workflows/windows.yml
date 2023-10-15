@@ -18,9 +18,9 @@ jobs:
         key: ${{ github.job }}
         max-size: 1000M
         variant: sccache
-    - name: configure CMake and build
+    - name: Configure CMake and build
       run: ./ProjectFolder/scripts/create_release.sh withTests
-    - name: run tests
+    - name: Run tests
       run: ./ProjectFolder/scripts/run_tests.sh Release
     - uses: actions/upload-artifact@v3
       if: success()
