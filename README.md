@@ -8,12 +8,15 @@
 - Github Actions
 - Test suite using CTest
 - Dockerfile
+- ccache built files caching
+- clang-format linting
 
 Requirements:
 --------------
 - CMake
 - Clang
 - LLDB
+- clang-format (optional)
 - VSCode 'CodeLLDB' extension (optional)
 - Visual Studio, MSVC compiler (Windows only)
 
