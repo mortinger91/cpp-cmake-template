@@ -53,12 +53,13 @@ or execute VSCode task ```create_release```.
 Notes:
 =======
 
-- To add new files create a new folder in ```ProjectFolder/src```<br>
-and add ```*.cpp``` and ```*.h``` files into it.<br>
-You need to re-run ```build_cmake_debug```.
-- To add new tests, add a new ```test_*.cpp``` file in<br>
-```ProjectFolder/test```.<br>
-You need to re-run ```build_cmake_debug```.
+- To add new files: 
+    - create a new folder in ```ProjectFolder/src```  
+    - add ```*.cpp``` and ```*.h``` files into it.
+    - Remember to re-run ```build_cmake_debug```
+- To add new tests: 
+    - add new ```test_*.cpp``` files in ```ProjectFolder/test```.  
+    - Remember to re-run ```build_cmake_debug```
 
 ### Possible future improvements:
 
