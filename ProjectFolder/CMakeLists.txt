@@ -1,13 +1,21 @@
 cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
 
-# Setting up ccache
-find_program(CCACHE_PROGRAM ccache)
-if(CCACHE_PROGRAM)
-    message("${CCACHE_PROGRAM} has been found on the system!")
-    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+# Setting up ccache or sccache
+find_program(CCACHE "ccache")
+if(CCACHE)
+    message("${CCACHE} has been found in the system!")
+    set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE})
+    set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE})
 else()
-    message("ccache has NOT been found on the system!")
-endif()
+    find_program(SCCACHE "sccache")
+    if(SCCACHE)
+        message("${SCCACHE} has been found in the system!")
+        set(CMAKE_C_COMPILER_LAUNCHER ${SCCACHE})
+        set(CMAKE_CXX_COMPILER_LAUNCHER ${SCCACHE})
+    else()
+        message("neither ccache or sccache have been found in the system!")
+    endif(SCCACHE)
+endif(CCACHE)
 
 # Project
 set(PROJECT_DESCRIPTION "Template CMake C++")
