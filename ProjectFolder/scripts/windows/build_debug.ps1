@@ -3,8 +3,13 @@
 # - the first time the project is built
 # - whenever a new file is added or removed
 
-$cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
-$cpu_count = $cpu_count - 1
+try {
+    $cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
+    $cpu_count = $cpu_count - 1
+}
+catch {
+    $cpu_count = 4
+}
 
 Write-Host "Building Debug version using $($cpu_count) threads..."
 cmake --build build/Debug/ -j $cpu_count

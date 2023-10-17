@@ -18,8 +18,13 @@ if ($args.Length -gt 0) {
 
 Write-Host "Picked build type: $BUILD_TYPE for tests"
 
-$cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
-$cpu_count = $cpu_count - 1
+try {
+    $cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
+    $cpu_count = $cpu_count - 1
+}
+catch {
+    $cpu_count = 4
+}
 
 Write-Host "Running tests using $cpu_count threads..."
 ctest --output-on-failure --test-dir "build/$BUILD_TYPE/tests" -j $cpu_count
