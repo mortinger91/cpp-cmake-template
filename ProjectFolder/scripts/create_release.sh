@@ -4,6 +4,7 @@
 # To build test call this script with "withTests" argument 
 
 echo "Started building Release CMAKE files..."
+
 # Clearing build folder if it exists
 rm -r build/release &> /dev/null
 
@@ -19,6 +20,7 @@ else
 fi
 
 cmake -SProjectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
+
 echo "Finished building Release CMAKE files!"
 
 if [ "$(uname -s)" == "Linux" ]; then
@@ -28,8 +30,8 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 else
     exit 1
 fi
-
 cpu_count=$((cpu_count - 1))
+
 echo "Bulding Release version using ${cpu_count} threads..."
 cmake --build build/Release/ -j$cpu_count
 echo "Finished building Release!"

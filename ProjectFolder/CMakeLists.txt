@@ -27,9 +27,9 @@ project(
 )
 
 
-# Additional settings
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-# set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+# Clang compile commands are generated here:
+# build/Debug/compile_commands.json
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 endif()
