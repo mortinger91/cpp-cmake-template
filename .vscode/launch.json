@@ -8,7 +8,17 @@
             "program": "${workspaceFolder}/build/Debug/bin/cpp-cmake-template",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "build_debug",
+            "preLaunchTask": "build_debug"
+        },
+        {
+            "name": "DEBUG_WIN",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/Debug/cpp-cmake-template.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build_debug"
         }
     ]
 }

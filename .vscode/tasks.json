@@ -9,6 +9,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows": {
+                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/build_cmake_debug.ps1"
             }
         },
         {
@@ -19,6 +22,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows": {
+                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/build_debug.ps1"
             }
         },
         {
@@ -29,6 +35,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows": {
+                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/run_tests.ps1"
             }
         },
         {
@@ -39,6 +48,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows": {
+                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/create_release.ps1"
             }
         },
         {
