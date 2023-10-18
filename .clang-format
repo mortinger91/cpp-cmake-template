@@ -9,7 +9,7 @@ AlwaysBreakTemplateDeclarations: true
 NamespaceIndentation: All
 KeepEmptyLinesAtTheStartOfBlocks: true
 AllowShortFunctionsOnASingleLine: Empty
-SpaceBeforeParens: Never
+SpaceBeforeParens: ControlStatements
 # Only available in clang-format v16
 # InsertNewlineAtEOF: true
 
