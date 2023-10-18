@@ -19,3 +19,7 @@ IncludeCategories:
     Priority: 1
   - Regex: '<.*>'
     Priority: 2
+
+# Disabling it cause Google style sets it
+DerivePointerAlignment: false
+PointerBindsToType: true
