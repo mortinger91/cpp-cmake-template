@@ -15,4 +15,6 @@ cpu_count=$((cpu_count - 1))
 
 echo "Bulding Debug version using ${cpu_count} threads..."
 cmake --build build/Debug/ -j$cpu_count
+RESULT=$?
 echo "Finished building Debug!"
+exit $RESULT

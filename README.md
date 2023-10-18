@@ -66,6 +66,7 @@ Notes:
 
 ### Possible future improvements:
 
-- Add scripts for Windows, fix CI
+- Fix Windows built files path
 - Static checker (BASH and cpp)
+- E2E tests (other than just building, also running the binary to see if there are any run-time errors)
 - CMake install

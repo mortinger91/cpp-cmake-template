@@ -7,4 +7,6 @@ echo "Started building Debug CMake files..."
 rm -r build/debug &> /dev/null
 
 cmake -SProjectFolder --preset Debug -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang
+RESULT=$?
 echo "Finished building Debug CMake files!"
+exit $RESULT

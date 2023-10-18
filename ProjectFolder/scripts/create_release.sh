@@ -20,6 +20,10 @@ else
 fi
 
 cmake -SProjectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
+RESULT=$?
+if [ $RESULT != 0 ]; then
+    exit $RESULT
+fi
 
 echo "Finished building Release CMAKE files!"
 
@@ -34,4 +38,9 @@ cpu_count=$((cpu_count - 1))
 
 echo "Bulding Release version using ${cpu_count} threads..."
 cmake --build build/Release/ -j$cpu_count
+RESULT=$?
+if [ $RESULT != 0]; then
+    exit $RESULT
+fi
 echo "Finished building Release!"
+exit 0
