@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
+# v3.19 is required because lower versions do not support presets
+cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 # Setting up ccache or sccache
 find_program(CCACHE "ccache")
