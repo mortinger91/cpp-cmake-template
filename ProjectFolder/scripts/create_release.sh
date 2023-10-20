@@ -34,7 +34,6 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 else
     exit 1
 fi
-cpu_count=$((cpu_count - 1))
 
 echo "Bulding Release version using ${cpu_count} threads..."
 cmake --build build/Release/ -j$cpu_count

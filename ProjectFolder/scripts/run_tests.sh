@@ -23,7 +23,6 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 else
     exit 1
 fi
-cpu_count=$((cpu_count - 1))
 
 echo "Running tests using ${cpu_count} threads..."
 ctest --output-on-failure --test-dir build/$BUILD_TYPE/tests -j$cpu_count

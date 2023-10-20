@@ -20,10 +20,9 @@ Write-Host "Picked build type: $BUILD_TYPE for tests"
 
 try {
     $cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
-    $cpu_count = $cpu_count - 1
 }
 catch {
-    $cpu_count = 4
+    $cpu_count = 1
 }
 
 Write-Host "Running tests using $cpu_count threads..."

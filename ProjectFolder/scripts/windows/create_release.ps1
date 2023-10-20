@@ -24,10 +24,9 @@ Write-Host "Finished building Release CMake files!"
 
 try {
     $cpu_count = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfLogicalProcessors
-    $cpu_count = $cpu_count - 1
 }
 catch {
-    $cpu_count = 4
+    $cpu_count = 1
 }
 
 Write-Host "Building Release version using $cpu_count threads..."
