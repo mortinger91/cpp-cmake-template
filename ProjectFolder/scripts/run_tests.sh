@@ -28,4 +28,4 @@ echo "Running tests using ${cpu_count} threads..."
 ctest --output-on-failure --test-dir build/$BUILD_TYPE/tests -j$cpu_count
 RESULT=$?
 echo "Finished running tests..."
-exit "${RESULT}"
+exit $RESULT

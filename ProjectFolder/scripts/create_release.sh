@@ -38,8 +38,5 @@ fi
 echo "Bulding Release version using ${cpu_count} threads..."
 cmake --build build/Release/ -j$cpu_count
 RESULT=$?
-if [ "$RESULT" -ne 0 ]; then
-    exit $RESULT
-fi
 echo "Finished building Release!"
-exit 0
+exit $RESULT
