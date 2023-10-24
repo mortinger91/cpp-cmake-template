@@ -38,15 +38,21 @@ namespace test
 }  // namespace test
 
 #ifdef _WIN32
-#define assertTrue(expr) if (!(expr)) { \
-    std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ << " line " << __LINE__ << std::endl; \
-    ExitProcess(1); \
-}
+#define assertTrue(expr)                                                 \
+    if (!(expr))                                                         \
+    {                                                                    \
+        std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ \
+                  << " line " << __LINE__ << std::endl;                  \
+        ExitProcess(1);                                                  \
+    }
 #else
-#define assertTrue(expr) if (!(expr)) { \
-    std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ << " line " << __LINE__ << std::endl; \
-    std::abort(); \
-}
+#define assertTrue(expr)                                                 \
+    if (!(expr))                                                         \
+    {                                                                    \
+        std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ \
+                  << " line " << __LINE__ << std::endl;                  \
+        std::abort();                                                    \
+    }
 #endif
 
 #define ASSERT_THROW(condition)                                  \
