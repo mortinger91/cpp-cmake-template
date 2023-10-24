@@ -5,7 +5,7 @@
 Write-Host "Started building Release CMake files..."
 
 # Clearing build folder if it exists
-Remove-Item -Path "build/release" -Recurse -ErrorAction SilentlyContinue
+Remove-Item -Path "build/Release" -Recurse -ErrorAction SilentlyContinue
 
 Write-Host "Deciding if tests need to be built..."
 if ($args.Length -gt 0) {

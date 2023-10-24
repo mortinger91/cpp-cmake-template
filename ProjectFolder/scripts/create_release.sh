@@ -6,17 +6,17 @@
 echo "Started building Release CMAKE files..."
 
 # Clearing build folder if it exists
-rm -r build/release &> /dev/null
+rm -r build/Release &> /dev/null
 
-echo "Deciding if tests need to be built..."
+echo -n "Deciding if tests need to be built... "
 if [ -n "$1" ]; then
     if [ "$1" == "withTests" ]; then
         BUILD_TESTS="ON"
-        echo "Building with tests"
+        echo "YES"
     fi
 else
     BUILD_TESTS="OFF"
-    echo "Building without tests"
+    echo "NO"
 fi
 
 cmake -SProjectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
