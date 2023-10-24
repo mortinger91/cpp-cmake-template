@@ -1,6 +1,13 @@
 name: Build and test all platforms
 on:
   push:
+    paths-ignore:
+      - '**.md'
+      - .clang-format
+      - .dockerignore
+      - .gitignore
+      - docker-compose.yml
+      - Dockerfile
   workflow_dispatch:
     
 jobs:
