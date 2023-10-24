@@ -1,7 +1,7 @@
 # Development / Testing image for C++ CMake template project
 
 # base image used as the starting point for this image
-FROM debian:latest
+FROM debian:10-slim
 
 # ENV DEBIAN_FRONTEND=noninteractive
 
