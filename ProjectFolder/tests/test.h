@@ -5,6 +5,9 @@
 #include <string>
 #include <vector>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
 namespace test
 {
     void assertVectorContentIsEqual(std::vector<char> x, std::vector<char> y)
@@ -34,10 +37,17 @@ namespace test
     }
 }  // namespace test
 
+#ifdef _WIN32
+#define assertTrue(expr) if (!(expr)) { \
+    std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ << " line " << __LINE__ << std::endl; \
+    ExitProcess(1); \
+}
+#else
 #define assertTrue(expr) if (!(expr)) { \
     std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ << " line " << __LINE__ << std::endl; \
     std::abort(); \
 }
+#endif
 
 #define ASSERT_THROW(condition)                                  \
     {                                                            \
