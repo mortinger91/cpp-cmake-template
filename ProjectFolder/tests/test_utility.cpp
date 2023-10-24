@@ -3,7 +3,8 @@
 
 void testHelloWorld()
 {
-    assert(Utility::HelloWorld() == "Hello World!");
+    assertTrue(Utility::HelloWorld() == "Hello World!");
+    assertTrue(Utility::HelloWorld() != "I am Batman!");
 }
 
 int main()

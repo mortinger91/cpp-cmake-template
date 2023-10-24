@@ -7,7 +7,6 @@
 
 namespace test
 {
-
     void assertVectorContentIsEqual(std::vector<char> x, std::vector<char> y)
     {
         std::string errorStringSize =
@@ -34,6 +33,11 @@ namespace test
         }
     }
 }  // namespace test
+
+#define assertTrue(expr) if (!(expr)) { \
+    std::cerr << "Assertion failed: " << #expr << " in " << __FILE__ << " line " << __LINE__ << std::endl; \
+    std::abort(); \
+}
 
 #define ASSERT_THROW(condition)                                  \
     {                                                            \
