@@ -12,7 +12,7 @@
 - clang-format (running automatically as pre-commit git hook)
 
 Requirements:
---------------
+-------------
 - CMake
 - Clang
 - LLDB
@@ -22,7 +22,7 @@ Requirements:
 - Visual Studio, MSVC compiler (Windows only)
 
 Set up project:
---------------
+---------------
     ./ProjectFolder/scripts/build_cmake_debug.sh
 
 or execute VSCode task `build_cmake_debug`.
@@ -30,6 +30,8 @@ or execute VSCode task `build_cmake_debug`.
 Build and Debug:
 ----------------
     ./ProjectFolder/scripts/build_debug.sh
+
+or execute VSCode task `build_debug`.
 
 Followed by:
 
@@ -53,6 +55,11 @@ Build release:
     ./ProjectFolder/scripts/create_release.sh
 
 or execute VSCode task ```create_release```.
+
+Windows:
+--------
+Use .ps1 scripts in `ProjectFolder/scripts/windows` folder  
+or same VSCode tasks, as listed above.
 
 Notes:
 =======
