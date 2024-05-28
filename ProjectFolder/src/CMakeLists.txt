@@ -46,12 +46,13 @@ set_target_properties(
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CUSTOM_COMPILE_OPTIONS
         -Wall
+        -O0
     )
     if (UNIX)
         list(APPEND CUSTOM_COMPILE_OPTIONS
             -Werror
-            -Wpedantic 
-            -Wextra 
+            -Wpedantic
+            -Wextra
         )
     endif()
     target_compile_options(
