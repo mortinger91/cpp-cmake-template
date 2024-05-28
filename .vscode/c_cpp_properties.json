@@ -8,6 +8,7 @@
             "defines": [],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-clang-x64",
             "compileCommands": "${workspaceFolder}/build/Debug/compile_commands.json"
         },
@@ -19,6 +20,7 @@
             "defines": [],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
+            "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64",
             "compileCommands": "${workspaceFolder}/build/Debug/compile_commands.json"
         }
