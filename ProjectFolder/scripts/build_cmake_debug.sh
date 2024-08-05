@@ -9,6 +9,7 @@ rm -r build/debug &> /dev/null
 echo "Installing pre-commit hook"
 rm ./.git/hooks/pre-commit
 cp ./ProjectFolder/scripts/git_hooks/pre-commit ./.git/hooks/pre-commit
+chmod +x ./.git/hooks/pre-commit
 
 cmake -SProjectFolder --preset Debug -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang
 RESULT=$?
