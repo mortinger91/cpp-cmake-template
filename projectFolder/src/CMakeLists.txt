@@ -39,11 +39,11 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     endif()
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(COMPILER_FLAGS
-        -O3
         -DNDEBUG
     )
     if(UNIX)
         list(APPEND COMPILER_FLAGS
+            -O3
             -march=native
             -ffast-math
         )
@@ -97,11 +97,19 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     )
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(LINKER_OPTIONS
-        -Wl,--strip-all # Strip debug symbols
-        -flto           # Enable link-time optimizations
     )
+    if(UNIX)
+        list(APPEND LINKER_OPTIONS
+            -flto           # Enable link-time optimizations
+        )
+    endif()
+    if(LINUX)
+        list(APPEND LINKER_OPTIONS
+        -Wl,--strip-all # Strip debug symbols
+    )
+    endif()
 endif()
-if(UNIX)
+if(LINUX)
     list(APPEND LINKER_OPTIONS
         -Wl,--no-undefined # Fail if there are any unresolved symbols in the final linked output
     )
