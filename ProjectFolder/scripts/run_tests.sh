@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Script used to run tests.
 # Specify whether you want Release or Debug tests to be run.
 # Passing no args will run Debug tests
@@ -27,5 +28,9 @@ fi
 echo "Running tests using ${cpu_count} threads..."
 ctest --output-on-failure --test-dir build/$BUILD_TYPE/tests -j$cpu_count
 RESULT=$?
-echo "Finished running tests..."
+if [ $RESULT == 0 ]; then
+    echo "SUCCESS: Tests completed successfully!"
+else
+    echo "FAIL: Error while running the tests!"
+fi
 exit $RESULT

@@ -1,7 +1,8 @@
 #!/bin/bash
+
 # Script used to build CMake Release files.
 # Calling this script without args will not build tests.
-# To build test call this script with "withTests" argument 
+# To build test call this script with "withTests" argument
 
 echo "Started building Release CMAKE files..."
 

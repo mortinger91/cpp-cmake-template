@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash -x
+
 # Script used to build CMake Debug files
 
 echo "Started building Debug CMake files..."
