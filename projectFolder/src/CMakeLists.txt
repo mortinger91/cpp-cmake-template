@@ -105,6 +105,7 @@ if(UNIX)
     list(APPEND LINKER_OPTIONS
         -Wl,--no-undefined # Fail if there are any unresolved symbols in the final linked output
     )
+endif()
 # Set the linker options for the library target
 target_link_options(
     ${PROJECT_NAME}_LIB

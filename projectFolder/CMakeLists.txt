@@ -7,13 +7,13 @@ find_program(CCACHE "ccache")
 if(CCACHE)
     set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE})
     set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE})
-    message("${CCACHE} will be used as compiler caching tool")
+    message("${CCACHE} will be used as the compiler caching tool")
 else()
     find_program(SCCACHE "sccache")
     if(SCCACHE)
         set(CMAKE_C_COMPILER_LAUNCHER ${SCCACHE})
         set(CMAKE_CXX_COMPILER_LAUNCHER ${SCCACHE})
-        message("${SCCACHE} will be used as compiler caching tool")
+        message("${SCCACHE} will be used as the compiler caching tool")
     else()
         message("Neither ccache nor sccache have been found in the system. No compiler caching tool will be used")
     endif(SCCACHE)
@@ -28,14 +28,12 @@ project(
         HOMEPAGE_URL ${ONLINE_REPOSITORY}
 )
 
-
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 # Clang compile commands are generated here:
 # build/Debug/compile_commands.json
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 endif()
-
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
