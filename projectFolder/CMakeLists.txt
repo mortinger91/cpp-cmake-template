@@ -1,20 +1,21 @@
-# v3.19 is required because lower versions do not support presets
+# v3.19 is the miminum required version because
+# lower versions do not support presets
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-# Setting up ccache or sccache
+message("Looking for compiler caching tool")
 find_program(CCACHE "ccache")
 if(CCACHE)
-    message("${CCACHE} has been found in the system!")
     set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE})
     set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE})
+    message("${CCACHE} will be used as compiler caching tool")
 else()
     find_program(SCCACHE "sccache")
     if(SCCACHE)
-        message("${SCCACHE} has been found in the system!")
         set(CMAKE_C_COMPILER_LAUNCHER ${SCCACHE})
         set(CMAKE_CXX_COMPILER_LAUNCHER ${SCCACHE})
+        message("${SCCACHE} will be used as compiler caching tool")
     else()
-        message("neither ccache or sccache have been found in the system!")
+        message("Neither ccache nor sccache have been found in the system. No compiler caching tool will be used")
     endif(SCCACHE)
 endif(CCACHE)
 
@@ -51,6 +52,6 @@ target_link_libraries(
 )
 
 option(BUILD_TESTS "Build tests" ON)
-if (BUILD_TESTS)
+if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
