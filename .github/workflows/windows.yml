@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3

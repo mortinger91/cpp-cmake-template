@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   linux:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     # Specify an image from hub.docker.com
     # container:
       # image: debian:10-slim

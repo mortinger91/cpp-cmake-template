@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   macos:
-    runs-on: macos-11
+    runs-on: macos-latest
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v3
