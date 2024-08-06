@@ -19,9 +19,9 @@ jobs:
         max-size: 1000M
         variant: sccache
     - name: Configure CMake and build
-      run: ./ProjectFolder/scripts/windows/create_release.ps1 withTests
+      run: ./projectFolder/scripts/windows/create_release.ps1 withTests
     - name: Run tests
-      run: ./ProjectFolder/scripts/windows/run_tests.ps1 Release
+      run: ./projectFolder/scripts/windows/run_tests.ps1 Release
     - uses: actions/upload-artifact@v3
       if: success()
       with:

@@ -23,13 +23,13 @@ Requirements:
 
 Set up project:
 ---------------
-    ./ProjectFolder/scripts/build_cmake_debug.sh
+    ./projectFolder/scripts/build_cmake_debug.sh
 
 or execute VSCode task `build_cmake_debug`.
 
 Build and Debug:
 ----------------
-    ./ProjectFolder/scripts/build_debug.sh
+    ./projectFolder/scripts/build_debug.sh
 
 or execute VSCode task `build_debug`.
 
@@ -41,7 +41,7 @@ or launch VSCode `DEBUG` configuration.
 
 Run tests:
 ----------
-    ./ProjectFolder/scripts/run_tests.sh
+    ./projectFolder/scripts/run_tests.sh
 
 or execute VSCode task `run_tests`.
 
@@ -52,24 +52,24 @@ or execute VSCode task `run_tests`.
 
 Build release:
 --------------
-    ./ProjectFolder/scripts/create_release.sh
+    ./projectFolder/scripts/create_release.sh
 
 or execute VSCode task ```create_release```.
 
 Windows:
 --------
-Use .ps1 scripts in `ProjectFolder/scripts/windows` folder  
+Use .ps1 scripts in `projectFolder/scripts/windows` folder  
 or same VSCode tasks, as listed above.
 
 Notes:
 =======
 
 - To add new files: 
-    - create a new folder in ```ProjectFolder/src```  
+    - create a new folder in ```projectFolder/src```  
     - add ```*.cpp``` and ```*.h``` files into it.
     - Remember to re-run ```build_cmake_debug```
 - To add new tests: 
-    - add new ```test_*.cpp``` files in ```ProjectFolder/test```.  
+    - add new ```test_*.cpp``` files in ```projectFolder/test```.  
     - Remember to re-run ```build_cmake_debug```
 
 ### Possible future improvements:

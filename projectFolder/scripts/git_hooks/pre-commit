@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Relative path to your custom script within your project folder
-custom_script_path="./ProjectFolder/scripts/format.sh"
+custom_script_path="./projectFolder/scripts/format.sh"
 
 echo "pre-commit hook: Running ${custom_script_path}"
 

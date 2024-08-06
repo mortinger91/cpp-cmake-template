@@ -1,8 +1,8 @@
 #!/bin/bash
 
-find ProjectFolder/src/ -iname *.h -o -iname *.cpp | xargs clang-format -i
+find projectFolder/src/ -iname *.h -o -iname *.cpp | xargs clang-format -i
 
-find ProjectFolder/tests/ -iname *.h -o -iname *.cpp | xargs clang-format -i
+find projectFolder/tests/ -iname *.h -o -iname *.cpp | xargs clang-format -i
 
 # Check if any changes were made by clang-format
 if git diff --exit-code; then

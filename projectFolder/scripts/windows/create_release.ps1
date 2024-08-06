@@ -18,7 +18,7 @@ if ($args.Length -gt 0) {
     Write-Host "Building without tests"
 }
 
-cmake -S ProjectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
+cmake -S projectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
 
 Write-Host "Finished building Release CMake files!"
 

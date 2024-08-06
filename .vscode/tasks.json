@@ -4,59 +4,59 @@
         {
             "label": "build_cmake_debug",
             "type": "shell",
-            "command": "${workspaceFolder}/ProjectFolder/scripts/build_cmake_debug.sh", 
+            "command": "${workspaceFolder}/projectFolder/scripts/build_cmake_debug.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "windows": {
-                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/build_cmake_debug.ps1"
+                "command": "${workspaceFolder}/projectFolder/scripts/windows/build_cmake_debug.ps1"
             }
         },
         {
             "label": "build_debug",
             "type": "shell",
-            "command": "${workspaceFolder}/ProjectFolder/scripts/build_debug.sh", 
+            "command": "${workspaceFolder}/projectFolder/scripts/build_debug.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "windows": {
-                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/build_debug.ps1"
+                "command": "${workspaceFolder}/projectFolder/scripts/windows/build_debug.ps1"
             }
         },
         {
             "label": "run_tests",
             "type": "shell",
-            "command": "${workspaceFolder}/ProjectFolder/scripts/run_tests.sh", 
+            "command": "${workspaceFolder}/projectFolder/scripts/run_tests.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "windows": {
-                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/run_tests.ps1"
+                "command": "${workspaceFolder}/projectFolder/scripts/windows/run_tests.ps1"
             }
         },
         {
             "label": "create_release",
             "type": "shell",
-            "command": "${workspaceFolder}/ProjectFolder/scripts/create_release.sh", 
+            "command": "${workspaceFolder}/projectFolder/scripts/create_release.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "windows": {
-                "command": "${workspaceFolder}/ProjectFolder/scripts/windows/create_release.ps1"
+                "command": "${workspaceFolder}/projectFolder/scripts/windows/create_release.ps1"
             }
         },
         {
             "label": "format_code",
             "type": "shell",
-            "command": "${workspaceFolder}/ProjectFolder/scripts/format.sh", 
+            "command": "${workspaceFolder}/projectFolder/scripts/format.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

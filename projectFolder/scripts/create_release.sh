@@ -20,7 +20,7 @@ else
     echo "NO"
 fi
 
-cmake -SProjectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
+cmake -SprojectFolder --preset Release -DBUILD_TESTS=$BUILD_TESTS
 RESULT=$?
 if [ "$RESULT" -ne 0 ]; then
     exit $RESULT

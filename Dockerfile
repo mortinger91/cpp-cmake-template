@@ -15,7 +15,7 @@ RUN apt-get update \
         clang \
         llvm \
         libc++-dev libc++abi-dev \
-        cmake \        
+        cmake \
         libboost-all-dev \
         ccache \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -31,15 +31,15 @@ ARG TEST_VAR_DOCKERFILE=test
 # ↓ Build and compile project
 
 # Copying the actual folder of the project into the cointainer filesystem
-COPY ProjectFolder /ProjectFolder
+COPY projectFolder /projectFolder
 
 # Setting the working directory inside the project folder
 WORKDIR /
 
-RUN ProjectFolder/scripts/build_cmake_debug.sh
-RUN ProjectFolder/scripts/build_debug.sh
+RUN projectFolder/scripts/build_cmake_debug.sh
+RUN projectFolder/scripts/build_debug.sh
 
 # The command that is run by default when the container starts
-CMD ["./ProjectFolder/scripts/run_tests.sh"]
+CMD ["./projectFolder/scripts/run_tests.sh"]
 # Run this to launch the project binary instead
-# CMD ["./ProjectFolder/build/Debug/bin/cpp-cmake-template"]
+# CMD ["./projectFolder/build/Debug/bin/cpp-cmake-template"]
