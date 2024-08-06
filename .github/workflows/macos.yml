@@ -19,9 +19,9 @@ jobs:
         max-size: 1000M
         variant: sccache
     - name: Configure CMake and build
-      run: ./projectFolder/scripts/create_release.sh withTests
+      run: ${{ github.workspace }}/projectFolder/scripts/create_release.sh withTests
     - name: Run tests
-      run: ./projectFolder/scripts/run_tests.sh Release
+      run: ${{ github.workspace }}/projectFolder/scripts/run_tests.sh Release
     - uses: actions/upload-artifact@v3
       if: success()
       with:

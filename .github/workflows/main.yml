@@ -9,7 +9,7 @@ on:
       - docker-compose.yml
       - Dockerfile
   workflow_dispatch:
-    
+
 jobs:
   linux:
     permissions:
