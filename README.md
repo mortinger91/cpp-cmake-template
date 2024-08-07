@@ -5,10 +5,11 @@
 ## Template for a multi-platform C++ CMake project
 
 ### Main features:
+- CMake files
 - CTest unit tests framework
-- Github Actions performing build and running the tests
+- Github Actions that build and run the tests
 - Scripts and VSCode files for ease of use
-- Dockerfile for building and running the tests
+- Dockerfile for building and running the tests in a container
 - Support for compiler cache tools: ccache and sccache
 - Formatting via clang-format (that runs automatically in a git pre-commit hook)
 
@@ -29,7 +30,7 @@ Execute VSCode task `build_cmake_debug` or run this script:
     ./projectFolder/scripts/build_cmake_debug.sh
 
 This needs to run the first time and any time you make  
-changes to a CMake file or add new source files.
+changes to a CMake file or add new source or test files.
 
 ### How to build the project:
 Execute VSCode task `build_debug` or run this script:
@@ -53,10 +54,10 @@ Execute VSCode task `run_tests` or run this script:
     
     ./projectFolder/scripts/run_tests.sh
 
-If you want to run the tests in a fresh Docker container, run these commands:
+If you want to build and run the tests in a fresh Docker container  
+execute VSCode task `run_tests_in_Docker` or run this script:
 
-    docker compose down --volumes --rmi all
-    docker compose up
+    ./projectFolder/scripts/run_tests_in_Docker.sh
 
 ### How to add new files to the project:
 Add any new source file to a `projectFolder/src/dir` directory.  

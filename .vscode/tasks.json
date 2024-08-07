@@ -98,6 +98,19 @@
                 "command": "${workspaceFolder}/projectFolder/scripts/windows/run_tests.ps1"
             }
         },
+        {
+            "label": "run_tests_in_Docker",
+            "type": "shell",
+            "presentation": {
+                "focus": true,
+                "showReuseMessage": false
+            },
+            "group": {
+                "kind": "build"
+            },
+
+            "command": "${workspaceFolder}/projectFolder/scripts/run_tests_in_Docker.sh"
+        },
         // Other tasks
         {
             "label": "format_code",

@@ -1,6 +1,3 @@
-# Development / Testing image for C++ CMake template project
-
-# base image used as the starting point for this image
 FROM debian:12-slim
 
 # ENV DEBIAN_FRONTEND=noninteractive
@@ -36,10 +33,7 @@ COPY projectFolder /projectFolder
 # Setting the working directory inside the project folder
 WORKDIR /
 
-RUN projectFolder/scripts/build_cmake_debug.sh
-RUN projectFolder/scripts/build_debug.sh
+RUN projectFolder/scripts/create_release.sh withTests
 
 # The command that is run by default when the container starts
-CMD ["./projectFolder/scripts/run_tests.sh"]
-# Run this to launch the project binary instead
-# CMD ["./projectFolder/build/Debug/bin/cpp-cmake-template"]
+CMD ["./projectFolder/scripts/run_tests.sh", "Release"]
