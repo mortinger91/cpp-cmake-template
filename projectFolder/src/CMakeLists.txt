@@ -66,7 +66,20 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(PREPROCESSOR_MACROS
         RELEASE
-        )
+    )
+endif()
+if(LINUX)
+    list(APPEND PREPROCESSOR_MACROS
+        LINUX
+    )
+elseif(APPLE)
+    list(APPEND PREPROCESSOR_MACROS
+        MACOS
+    )
+elseif(WIN32)
+    list(APPEND PREPROCESSOR_MACROS
+        WINDOWS
+    )
 endif()
 # Set the preprocessor macros for the library target
 target_compile_definitions(
@@ -105,8 +118,8 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     endif()
     if(LINUX)
         list(APPEND LINKER_OPTIONS
-        -Wl,--strip-all # Strip debug symbols
-    )
+            -Wl,--strip-all # Strip debug symbols
+        )
     endif()
 endif()
 if(LINUX)
